@@ -1,0 +1,28 @@
+[
+  {
+    "selected": true,
+    "productName": "IPhone",
+    "productPrice": 5447.5,
+    "productCount": 3
+  },
+  {
+    "selected": false,
+    "productName": "Laptop",
+    "productPrice": 6657.5,
+    "productCount": 2
+  }
+,
+  {
+    "selected": true,
+    "productName": "GoodLaptop",
+    "productPrice": 7657.5,
+    "productCount": 2
+  }
+,
+  {
+    "selected": false,
+    "productName": "IPhoneXX  ",
+    "productPrice": 16657.5,
+    "productCount": 3
+  }
+]

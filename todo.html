@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo Practice</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="app">
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    To Do List
+                </a>
+            </div>
+        </div>
+    </nav><br>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 offset-2">
+    <div  class="card text-center">
+        <div class="card-header">
+           To Do List {{count}}
+            <input type="text" @keyup.13="addTodo">
+        </div>
+        <div class="card-body">
+            <ul class="list-group">
+                <li @dblclick="remember(item)" v-for="(item,index) in todoList" class="list-group-item ">
+                    <span :class="{del:item.isSelected}" class="float-left" v-show="current!==item">
+                        <input  type="checkbox"v-model="item.isSelected" />{{item.text}}</span>
+                    <input  @blur="cancel" v-show="current===item" class="float-left" type="text" v-model="item.text" @keyup.13="updateTodo(item)" v-focus="current===item">
+                    <button @click="deleteItem(item)" class="float-right">Delete</button>
+                    <button v-color="flag" class="float-right">Color</button>
+                </li>
+
+            </ul>
+        </div>
+        <div class="card-footer">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Finished</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Unfinished</a>
+                </li>
+
+            </ul>
+
+        </div></div>
+    </div></div></div>
+</div>
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script src="todo.js"></script>
+</body>
+</html>
